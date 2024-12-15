@@ -5,3 +5,4 @@ aiogram_dialog==2.2.0
 aiomysql==0.2.0
 requests==2.32.3
 PyMySQL==1.1.1
+aiohttp==3.10.11
