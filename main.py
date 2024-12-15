@@ -22,7 +22,7 @@ from dotenv import load_dotenv  # Импортируем функцию для �
 import os  # Импортируем модуль для работы с операционной системой
 from aiogram.client.session.aiohttp import AiohttpSession
 session = AiohttpSession(proxy="http://proxy.server:3128")
-bot = Bot(token="bot token", session=session)
+bot = Bot(token="7157534842:AAGuExWpdrTvidFSCi17FIFxOln5gTwaHns", session=session)
 # Настройка логирования
 logger = logging.getLogger(__name__)
 
