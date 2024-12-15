@@ -1,3 +1,4 @@
+import aiohttp
 import asyncio  # Импортируем модуль для работы с асинхронным программированием
 import logging  # Импортируем модуль для ведения логов
 from aiogram import Bot, Dispatcher  # Импортируем классы Bot и Dispatcher из библиотеки aiogram
@@ -76,6 +77,14 @@ async def main():
 
     await bot.delete_webhook(drop_pending_updates=True)  # Удаляем вебхук (если был установлен) и сбрасываем ожидающие обновления
     await dp.start_polling(bot)  # Запускаем опрос обновлений от Telegram
+
+async def test_connection():
+    async with aiohttp.ClientSession() as session:
+        try:
+            async with session.get('https://api.telegram.org') as response:
+                print("Статус:", response.status)
+        except Exception as e:
+            print("Ошибка:", e)
 
 if __name__ == "__main__":
     asyncio.run(main())  # Запускаем основную асинхронную функцию
