@@ -20,7 +20,9 @@ from aiogram_dialog import setup_dialogs  # Импортируем функци�
 from utils.api import APIFootball  # Импортируем класс для работы с API футбольной статистики
 from dotenv import load_dotenv  # Импортируем функцию для загрузки переменных окружения
 import os  # Импортируем модуль для работы с операционной системой
-
+from aiogram.client.session.aiohttp import AiohttpSession
+session = AiohttpSession(proxy="http://proxy.server:3128")
+bot = Bot(token="bot token", session=session)
 # Настройка логирования
 logger = logging.getLogger(__name__)
 
